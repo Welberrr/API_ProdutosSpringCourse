@@ -3,23 +3,26 @@ package api.produtos.springcourse.produtosapi.model;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+// POJO -> Plain Old Java Object
 
 @Entity
+@Table(name = "produto")
 public class Produto {
 
     @Id
-    @Column
+    @Column(name = "id")
     private String id;
 
-    @Column
+    @Column(name = "nome")
     private String nome;
 
-    @Column
+    @Column(name = "descricao")
     private String descricao;
 
-    @Column
-    private double preco;
-
+    @Column(name = "preco")
+    private Double preco;
 
     public String getId() {
         return id;
@@ -45,11 +48,11 @@ public class Produto {
         this.descricao = descricao;
     }
 
-    public double getPreco() {
+    public Double getPreco() {
         return preco;
     }
 
-    public void setPreco(double preco) {
+    public void setPreco(Double preco) {
         this.preco = preco;
     }
 
